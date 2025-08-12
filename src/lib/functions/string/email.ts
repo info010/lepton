@@ -13,21 +13,21 @@ export class LeptonEmail extends LeptonType<string, string> {
     
     parse(input: string): string {
         if (!this.isValidEmail(input)) {
-            throw new Error(`Invalid email: ${input}`);
+            throw new LeptonError(`Invalid email: ${input}`);
         }
         return input;
     }
 
     encode(value: string): string {
         if (!this.isValidEmail(value)) {
-            throw new Error(`Invalid email: ${value}`);
+            throw new LeptonError(`Invalid email: ${value}`);
         }
         return value;
     }
 
     _rawDecode(value: string): [string, string] {
         if (!this.isValidEmail(value)) {
-            throw new Error(`Invalid email: ${value}`);
+            throw new LeptonError(`Invalid email: ${value}`);
         }
         return [value, value];
     }

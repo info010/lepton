@@ -9,8 +9,7 @@ export class LeptonUrl extends LeptonType<string, URL> {
 
     parse(input: string): URL {
         try {
-            const url = new URL(input);
-            return url;
+            return new URL(input);
         } catch {
             throw new LeptonError(`Invalid URL: ${input}`);
         }
