@@ -2,7 +2,6 @@ import {LeptonError} from "../errors.ts";
 import {LeptonOptional, LeptonNullable, LeptonArray} from "../wrapper/wrappers.ts";
 import {LeptonType} from "../types.ts";
 import {decodeVarInt, encodeVarInt} from "../../utils.ts";
-import { LeptonDate } from "../functions/bigint/date.ts";
 
 export class LeptonBigInt extends LeptonType<bigint, bigint> {
 	/**
@@ -46,10 +45,6 @@ export class LeptonBigInt extends LeptonType<bigint, bigint> {
 
 	array(): LeptonArray<this> {
 		return new LeptonArray(this);
-	}
-
-	date(): LeptonDate {
-		return new LeptonDate();
 	}
 }
 

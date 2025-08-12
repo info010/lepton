@@ -67,14 +67,7 @@ export class LeptonString extends LeptonType<string, string> {
 	array(): LeptonArray<this> {
 		return new LeptonArray(this);
 	}
-
-	url(): LeptonUrl {
-		return new LeptonUrl();
-	}
-
-	email(): LeptonEmail {
-		return new LeptonEmail();
-	}
+	
 }
 
 /**
