@@ -2,6 +2,8 @@ import {LeptonError} from "../errors.ts";
 import {LeptonOptional, LeptonNullable, LeptonArray} from "../wrapper/wrappers.ts";
 import {LeptonType} from "../types.ts";
 import {decodeVarInt, encodeVarInt} from "../../utils.ts";
+import { LeptonUrl } from "../functions/string/url.ts";
+import { LeptonEmail } from "../functions/string/email.ts";
 
 /**
  * Represents a string type in Lepton schemas
@@ -64,6 +66,14 @@ export class LeptonString extends LeptonType<string, string> {
 
 	array(): LeptonArray<this> {
 		return new LeptonArray(this);
+	}
+
+	url(): LeptonUrl {
+		return new LeptonUrl();
+	}
+
+	email(): LeptonEmail {
+		return new LeptonEmail();
 	}
 }
 
